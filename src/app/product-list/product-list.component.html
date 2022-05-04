@@ -1,0 +1,18 @@
+<h2>상품목록</h2>
+<div *ngFor="let producta of products">
+  <h3>
+    <a [routerLink]="['/products', producta.id]">
+      {{ producta.name }}
+    </a>
+  </h3>
+  <button (click)="share()">Share</button>
+
+  <app-product-alerts [product]="producta" (notify)="onNotify()">
+  </app-product-alerts>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
